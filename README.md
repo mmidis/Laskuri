@@ -1,0 +1,2 @@
+# Laskuri
+Harjoitustyö Digistartup-opintojaksolta
