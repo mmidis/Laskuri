@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Alv-laskuri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="author" content="Midora Linden">
+</head>
+
+<body>
+    <h3>Alv-laskuri</h3>
+    <p>Laske arvonlisävero 24 %.</p>
+    <form method="get">
+        <label>Veroton hinta: </label><br>
+        <input type="text" name="price" id="price"><br>
+    </form>
+
+    <p>Verollinen hinta on <span id="newPrice" style="font-size: 150%">0</span> euroa.</p>
+    <p>Arvonlisäveron määrä on <span id="vat" style="font-size: 150%">0</span> euroa.</p>
+
+    
+    <!--Scriptit-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        function onChange() {
+            let ogPrice = $("#price").val();
+            let newPrice = ogPrice * 1.24;
+            $("#newPrice").html(newPrice.toFixed(2));
+            let vat = newPrice - ogPrice;
+            $("#vat").html(vat.toFixed(2));
+        }
+        $("#price").on("keyup", onChange);
+    </script>
+
+</body>
+
+</html>
